@@ -79,9 +79,9 @@ Limitações:
 
 fiap-tech-challenge-nps-fase1-grupo24
 
-├── tech_challenge_nps_entrega_final.ipynb
-├── desafio_nps_fase_1.csv
-└── README.md
+- tech_challenge_nps_entrega_final.ipynb
+- desafio_nps_fase_1 (2).csv
+- README.md
 
 
 ---
