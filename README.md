@@ -50,9 +50,9 @@ Essa abordagem permite que a empresa realize ações preventivas para melhorar a
 
 📁 Arquivos
 
-├── tech_challenge_nps_entrega_final.ipynb
-├──desafio_nps_fase_1 (2).csv
-└── README.md
+- tech_challenge_nps_entrega_final.ipynb
+- desafio_nps_fase_1 (2).csv
+- README.md
 
 ▶️ Como executar
 
@@ -69,10 +69,10 @@ jupyter notebook tech_challenge_nps_entrega_final.ipynb
 
 👩‍🎓 Autores
 
-Bruna Rossi
-Daniel da Silva
-Gabrielle Dias
-Lucas Moura
-Muthiel Lorran
+- Bruna Rossi
+- Daniel da Silva
+- Gabrielle Dias
+- Lucas Moura
+- Muthiel Lorran
 
 Pós-Tech FIAP – Data Analytics
