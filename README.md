@@ -75,4 +75,4 @@ jupyter notebook tech_challenge_nps_entrega_final.ipynb
 - Lucas Moura
 - Muthiel Lorran
 
-Pós-Tech FIAP – Data Analytics
+Pós-Tech FIAP – AI Scientist
