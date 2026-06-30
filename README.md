@@ -69,10 +69,6 @@ jupyter notebook tech_challenge_nps_entrega_final.ipynb
 
 👩‍🎓 Autores
 
-Bruna Rossi
-Daniel da Silva
-Gabrielle Dias
-Lucas Moura
-Muthiel Lorran
+Bruna Rossi, Daniel da Silva, Gabrielle Dias, Lucas Moura e Muthiel Lorran
 
 Pós-Tech FIAP – Data Analytics
