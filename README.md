@@ -1,78 +1,260 @@
 # fiap-tech-challenge-nps-fase1-grupo24
 
-🛒 Tech Challenge – Fase 1: NPS Preditivo em E-commerce
+# 🛒 Tech Challenge – Fase 1: NPS Preditivo em E-commerce
 
-Projeto desenvolvido como parte da Pós-Tech em Data Analytics da FIAP, com o objetivo de prever a satisfação dos clientes (NPS) utilizando dados operacionais de um e-commerce.
+Projeto desenvolvido como parte da Pós-Tech em AI Scientist da FIAP.
 
-📌 Objetivo
+O objetivo do projeto é analisar dados operacionais de um e-commerce para identificar fatores que influenciam a satisfação dos clientes e desenvolver uma solução preditiva capaz de identificar clientes com maior risco de se tornarem detratores antes da aplicação da pesquisa de NPS.
 
-O Net Promoter Score (NPS) é uma das principais métricas de satisfação do cliente, porém normalmente é coletado apenas após a conclusão da jornada de compra.
+---
 
-Neste projeto foi desenvolvida uma análise completa para identificar os fatores que mais impactam o NPS e construir um modelo capaz de prever clientes com maior risco de se tornarem detratores antes mesmo da aplicação da pesquisa.
+# 📌 Objetivo do Projeto
 
-📂 Estrutura do projeto
+O Net Promoter Score (NPS) é uma métrica utilizada para medir satisfação e lealdade dos clientes. Porém, normalmente essa informação é coletada apenas após a conclusão da jornada de compra, limitando ações preventivas.
 
-* Entendimento do problema de negócio
-* Carregamento e exploração dos dados
-* Análise exploratória (EDA)
-* Estatística inferencial
-* Desenvolvimento de modelo preditivo
-* Interpretação dos resultados
-* Recomendações para o negócio
+Neste projeto buscamos responder:
 
-🧰 Tecnologias utilizadas
+**Quais fatores operacionais influenciam a satisfação do cliente e como prever clientes com maior risco de insatisfação antes da pesquisa de NPS?**
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* SciPy
-* Jupyter Notebook
+A análise permite gerar insights para áreas como:
 
-📊 Análises realizadas
+- Logística;
+- Atendimento;
+- Produto;
+- Estratégia comercial.
 
-* Distribuição das notas de NPS
-* Segmentação entre Promotores, Neutros e Detratores
-* Correlação entre variáveis operacionais e NPS
-* Impacto de atrasos nas entregas
-* Impacto do número de reclamações
-* Teste de hipótese para validar influência dos atrasos
-* Construção de modelo de classificação utilizando Random Forest
-* Análise da importância das variáveis (Feature Importance)
+---
 
-🤖 Modelo de Machine Learning
+# 🏢 Entendimento do Problema de Negócio
 
-Foi desenvolvido um modelo de classificação utilizando Random Forest, cujo objetivo é prever clientes com maior probabilidade de se tornarem detratores antes da pesquisa de NPS.
+O principal problema identificado é que a empresa consegue entender a insatisfação somente após o cliente responder a pesquisa.
 
-Essa abordagem permite que a empresa realize ações preventivas para melhorar a experiência do cliente.
+Com uma análise preditiva, torna-se possível:
 
-📁 Arquivos
+- Identificar clientes em risco;
+- Antecipar problemas;
+- Melhorar a experiência do consumidor;
+- Criar ações preventivas.
 
-- tech_challenge_nps_entrega_final.ipynb
-- desafio_nps_fase_1 (2).csv
-- README.md
+O NPS impacta diretamente:
 
-▶️ Como executar
+- **Recompra:** clientes satisfeitos possuem maior tendência de voltar a comprar;
+- **Boca a boca:** promotores recomendam a marca;
+- **Market Share:** uma melhor experiência aumenta competitividade.
 
-1. Clone este repositório.
-2. Instale as dependências:
+---
+
+# 🎯 Definição da Variável Alvo (Target)
+
+A variável escolhida foi:
+
+nps_score
+
+
+Ela representa a satisfação do cliente em uma escala de 0 a 10.
+
+Foi utilizada para criar a segmentação:
+
+- 0 a 6 → Detratores
+- 7 a 8 → Neutros
+- 9 a 10 → Promotores
+
+Para o modelo preditivo, o problema foi transformado em uma classificação binária:
+
+- Detrator;
+- Não detrator.
+
+A coleta do NPS ocorre após a conclusão da jornada de compra.
+
+Limitações:
+
+- Pode existir viés de resposta;
+- Clientes muito satisfeitos ou insatisfeitos podem responder mais;
+- O NPS indica satisfação, mas não explica sozinho a causa do problema.
+
+---
+
+# 📂 Estrutura do Projeto
+
+
+fiap-tech-challenge-nps-fase1-grupo24
+
+├── tech_challenge_nps_entrega_final.ipynb
+├── desafio_nps_fase_1.csv
+└── README.md
+
+
+---
+
+# 🗃️ Base de Dados
+
+A base contém informações relacionadas a:
+
+### Dados do pedido
+- Valor do pedido;
+- Quantidade de itens;
+- Forma de pagamento.
+
+### Dados logísticos
+- Tempo de entrega;
+- Dias de atraso;
+- Tentativas de entrega.
+
+### Dados de atendimento
+- Contatos realizados;
+- Tempo de resolução;
+- Reclamações.
+
+### Satisfação
+- Nota NPS do cliente.
+
+---
+
+# 📊 Análise Exploratória (EDA)
+
+Foram realizadas análises para identificar fatores relacionados à satisfação:
+
+## Distribuição do NPS
+
+Análise da distribuição das notas e classificação entre:
+
+- Promotores;
+- Neutros;
+- Detratores.
+
+## Relação entre variáveis operacionais e NPS
+
+Foram analisados:
+
+- Impacto de atrasos;
+- Quantidade de reclamações;
+- Contatos com atendimento;
+- Tempo de resolução.
+
+## Principais fatores associados a menor satisfação
+
+Os fatores mais críticos identificados foram:
+
+- Atrasos na entrega;
+- Maior quantidade de reclamações;
+- Maior necessidade de contato com atendimento;
+- Problemas sem resolução rápida.
+
+---
+
+# 📐 Estatística Inferencial
+
+Foi realizado um teste de hipótese para avaliar se atrasos influenciam o NPS.
+
+Hipóteses:
+
+**H0:** Atrasos não impactam o NPS.
+
+**H1:** Atrasos impactam o NPS.
+
+Teste utilizado:
+
+- Teste t de Student;
+- Nível de significância α = 0,05.
+
+---
+
+# 🤖 Modelo de Machine Learning
+
+Foi desenvolvido um modelo de classificação utilizando:
+
+## Random Forest
+
+Objetivo:
+
+Prever clientes com maior probabilidade de se tornarem detratores antes da pesquisa de satisfação.
+
+### Variáveis utilizadas:
+
+- delivery_delay_days;
+- delivery_attempts;
+- customer_service_contacts;
+- resolution_time_days;
+- complaints_count;
+- order_value;
+- freight_value.
+
+### Avaliação:
+
+O modelo foi avaliado utilizando:
+
+- AUC-ROC.
+
+Também foi analisada a importância das variáveis (Feature Importance) para identificar quais fatores mais influenciam a previsão.
+
+---
+
+# 💡 Recomendações para o Negócio
+
+Com base nos resultados:
+
+### Curto prazo
+
+- Monitorar atrasos de entrega;
+- Priorizar clientes com maior risco de insatisfação;
+- Melhorar velocidade de atendimento.
+
+### Médio prazo
+
+- Automatizar identificação de clientes críticos;
+- Reduzir tempo de resolução de problemas;
+- Criar ações preventivas.
+
+---
+
+# 🧰 Tecnologias Utilizadas
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SciPy
+- Scikit-learn
+- Jupyter Notebook
+
+---
+
+# ▶️ Como Executar
+
+Clone o repositório:
+
+
+git clone link-do-repositorio
+
+
+Instale as dependências:
+
 
 pip install pandas numpy matplotlib seaborn scipy scikit-learn
 
-3. Abra o notebook:
+
+Execute:
+
 
 jupyter notebook tech_challenge_nps_entrega_final.ipynb
 
-4. Faça o upload do arquivo desafio_nps_fase_1.csv quando solicitado.
 
-👩‍🎓 Autores
+Faça o upload da base:
 
-- Bruna Rossi
-- Daniel da Silva
-- Gabrielle Dias
-- Lucas Moura
-- Muthiel Lorran
+
+desafio_nps_fase_1.csv
+
+
+---
+
+# 👩‍🎓 Autores
+
+Bruna Rossi  
+Daniel da Silva  
+Gabrielle Dias  
+Lucas Moura  
+Muthiel Lorran  
 
 Pós-Tech FIAP – AI Scientist
+
